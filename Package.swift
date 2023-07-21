@@ -10,12 +10,21 @@ let package = Package(
         .library(
             name: "CGExtension_bk",
             targets: ["CGExtension_bk"]),
+        .library(
+            name: "CGExtension_bk2",
+            targets: ["CGExtension_2"])
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CGExtension_bk"),
+            name: "CGExtension_bk",
+            path: "Sources",
+            sources: ["CGExtension_bk"]),
+        .target(
+            name: "CGExtension_2",
+            path: "Sources",
+            sources: ["CGExtension_2"]),
         .testTarget(
             name: "CGExtension_bkTests",
             dependencies: ["CGExtension_bk"]),
